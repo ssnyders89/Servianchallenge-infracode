@@ -26,7 +26,7 @@ resource "azurerm_resource_group" "this" {
 
 
 resource "azurerm_container_registry" "acr" {
-  name                = "containerRegistry1"
+  name                = "contregchallenservian01"
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
   sku                 = "Standard"
@@ -124,4 +124,16 @@ resource "azurerm_postgresql_database" "challenge" {
   server_name         = azurerm_postgresql_server.challenge.name
   charset             = "UTF8"
   collation           = "English_United States.1252"
+}
+
+resource "azurerm_storage_account" "challenge" {
+  name                     = "storagechallenge1"
+  resource_group_name      = azurerm_resource_group.this.name
+  location                 = azurerm_resource_group.this.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags = {
+    environment = var.environment
+  }
 }
