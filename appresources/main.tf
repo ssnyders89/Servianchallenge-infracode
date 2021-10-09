@@ -25,25 +25,12 @@ resource "azurerm_resource_group" "this" {
 }
 
 
-resource "azurerm_container_registry" "acr" {
-  name                = "contregchallenservian01"
-  resource_group_name = azurerm_resource_group.this.name
-  location            = azurerm_resource_group.this.location
-  sku                 = "Standard"
-  admin_enabled       = true
-
-  tags = {
-    environment = var.environment
-  }
-}
-
-
 resource "azurerm_container_group" "challenge01" {
-  name                = "techchallenge"
+  name                = "techchallenge01"
   location            = azurerm_resource_group.this.location
   resource_group_name = azurerm_resource_group.this.name
   ip_address_type     = "public"
-  dns_name_label      = "servian-challenge"
+  dns_name_label      = "servian-challenge01"
   os_type             = "Linux"
   restart_policy      = "Always"
   image_registry_credential {
@@ -52,7 +39,7 @@ resource "azurerm_container_group" "challenge01" {
     server = "contregchallenservian01.azurecr.io"
   }
   container {
-    name   = "challenge"
+    name   = "challenge01"
     image  = "contregchallenservian01.azurecr.io/techchallengeapp:1.1"
     cpu    = "0.5"
     memory = "1.5"
@@ -70,7 +57,7 @@ resource "azurerm_container_group" "challenge01" {
 
 
 resource "azurerm_key_vault" "challenge" {
-  name                        = "challenge-pwd"
+  name                        = "challenge-pwd01"
   location                    = azurerm_resource_group.this.location
   resource_group_name         = azurerm_resource_group.this.name
   enabled_for_disk_encryption = true
@@ -111,7 +98,7 @@ resource "azurerm_key_vault" "challenge" {
 
   resource "azurerm_key_vault_secret" "acrsecret" {
   name         = "acrsecret"
-  value        = azurerm_container_registry.acr.admin_password
+  value        = data.azurerm_container_registry.acrsecret.admin_password
   key_vault_id = azurerm_key_vault.challenge.id
 
     tags = {
@@ -125,7 +112,7 @@ resource "random_string" "postgressqlsecret" {
 }
 
 resource "azurerm_postgresql_server" "challenge" {
-  name                = "postgresql-challenge-1"
+  name                = "postgresql-challenge-01"
   location            = azurerm_resource_group.this.location
   resource_group_name = azurerm_resource_group.this.name
 
@@ -137,7 +124,7 @@ resource "azurerm_postgresql_server" "challenge" {
   auto_grow_enabled            = true
 
   administrator_login          = "psqladminun"
-  administrator_login_password = data.azurerm_key_vault_secret.challenge.value
+  administrator_login_password = "OBBzSsbTSnznYMH6"
   version                      = "9.6"
   ssl_enforcement_enabled      = false
     tags = {
@@ -153,20 +140,6 @@ resource "azurerm_postgresql_database" "challenge" {
   collation           = "English_United States.1252"
 }
 
-resource "azurerm_storage_account" "challenge" {
-  name                     = "storagechallenge1"
-  resource_group_name      = azurerm_resource_group.this.name
-  location                 = azurerm_resource_group.this.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-
-  tags = {
-    environment = var.environment
-  }
-}
-
-
-
 data "azurerm_key_vault_secret" "challenge" {
   name         = "postgressqlsecret"
   key_vault_id = azurerm_key_vault.challenge.id
@@ -175,4 +148,9 @@ data "azurerm_key_vault_secret" "challenge" {
 data "azurerm_key_vault_secret" "acrsecret" {
   name         = "acrsecret"
   key_vault_id = azurerm_key_vault.challenge.id
+}
+
+data "azurerm_container_registry" "acrsecret" {
+  name         = "acrsharedtest"
+  resource_group_name = "rg-test-shared"
 }
