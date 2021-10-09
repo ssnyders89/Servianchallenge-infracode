@@ -24,10 +24,12 @@ steps:
       backendAzureRmContainerName: 'tfstatecontainer'
       backendAzureRmKey: 'prod.terraform.tfstate'
       allowTelemetryCollection: true
+      workingDirectory: $(System.DefaultWorkingDirectory)/appresources
     
   - task: TerraformCLI@0
     inputs:
       command: 'apply'
       environmentServiceName: 'Afreca Data(02f41df0-2cf7-4294-bec4-db0a2fec5a41)'
       allowTelemetryCollection: true
+      workingDirectory: $(System.DefaultWorkingDirectory)/appresources
   
