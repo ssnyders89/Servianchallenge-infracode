@@ -14,6 +14,14 @@ provider "azurerm" {
   features {}
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-test-shared"
+    storage_account_name = "storagetfstatetest"
+    container_name       = "tfstatecontainer"
+    key                  = "prod.terraform.tfstate"
+  }
+}
 
 resource "azurerm_resource_group" "this" {
   name     = format("rg-%s-challenge", var.environment)
@@ -34,14 +42,14 @@ resource "azurerm_container_group" "challenge01" {
   os_type             = "Linux"
   restart_policy      = "Always"
   image_registry_credential {
-    username = "contregchallenservian01"
+    username = "acrsharedtest"
     password = data.azurerm_key_vault_secret.acrsecret.value
-    server = "contregchallenservian01.azurecr.io"
+    server = "acrsharedtest.azurecr.io"
   }
   container {
     name   = "challenge01"
-    image  = "contregchallenservian01.azurecr.io/techchallengeapp:1.1"
-    cpu    = "0.5"
+    image  = "acrsharedtest.azurecr.io/techchallengeapp12:14"
+    cpu    = "1.0"
     memory = "1.5"
 
     ports {
