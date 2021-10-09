@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: TerraformInstaller@0
+    inputs:
+      terraformVersion: 'latest'
+
+  - task: TerraformCLI@0
+    inputs:
+      command: 'init'
+      backendType: 'azurerm'
+      backendServiceArm: 'Afreca Data(02f41df0-2cf7-4294-bec4-db0a2fec5a41)'
+      backendAzureRmResourceGroupName: 'rg-test-shared'
+      backendAzureRmStorageAccountName: 'storagetfstatetest'
+      backendAzureRmContainerName: 'tfstatecontainer'
+      backendAzureRmKey: 'prod.terraform.tfstate'
+      allowTelemetryCollection: true
+      workingDirectory: $(System.DefaultWorkingDirectory)/appresources
+    
+  - task: TerraformCLI@0
+    inputs:
+      command: 'apply'
+      environmentServiceName: 'Afreca Data(02f41df0-2cf7-4294-bec4-db0a2fec5a41)'
+      allowTelemetryCollection: true
+      workingDirectory: $(System.DefaultWorkingDirectory)/appresources
+  
