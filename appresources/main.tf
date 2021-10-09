@@ -77,7 +77,7 @@ resource "azurerm_key_vault" "challenge" {
 
   access_policy {
     tenant_id = "93738cb5-9dc2-4670-81cf-31aac746d957"
-    object_id = "5fca3f48-a24b-4b12-8fcd-3b0130d210c8"
+    object_id = "41876c24-e57b-4772-b3f3-bcf21912fa81"
 
     key_permissions = [
       "Get",
