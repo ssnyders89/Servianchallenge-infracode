@@ -30,12 +30,13 @@ FQDN: servian-challenge01.australiaeast.azurecontainer.io:3000
             - Storage Account and Storage Container: store our Backend Terraform State file.
 
 ### 3. Azure Devops Pipeline to Build and Push Docker Image to Container Registry.
-    1. Create pipeline in Azure Devops, where is your code? point to your github repositories that you forked from git@github.com:ssnyders89/TechChallengeApp.git.
+    1. Create pipeline in Azure Devops, point to your github repositories that you forked from git@github.com:ssnyders89/TechChallengeApp.git.
     2. Configure your pipeline by using Exsisting Azure Pipeline YAML File which can be found in our forkd repository called azure-pipelines.yml.
     3. following Variables to be modified:   
         dockerRegistryServiceConnection: 'YourServiceconnectionname'
         imageRepository: 'nameofimageRepo'
         containerRegistry: 'ContainerRegistryname.azurecr.io'
+    NOTE: Ensure your conf.toml is updated with correct Postgresql database information (you are planning to use in next step)
     4. Run Pipeline. If this is Successful should create and push a new docker image to your Container Registry in Azure Shared Resource Group.
 
 ### 4. Azure Devops Infra code Pipeline to Create Application Resources
@@ -68,7 +69,11 @@ FQDN: servian-challenge01.australiaeast.azurecontainer.io:3000
 - Think of Autoscale- currently not available with Azure container instance (could use AKS)
 - Think of an end to end automated pipeline to run (docker builds image, Auto modify Image name before deploying Azure container Instance)
 - Better backend state store
+- Multiple read replicas for Postgresql
 - Secure app - Certificate HTTPS
 - Use different branches in Github to add features and test before merging to Main
+
+## Testing
+In order to test this application I did docker build and run locally
 
 
