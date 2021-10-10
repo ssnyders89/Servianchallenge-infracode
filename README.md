@@ -1,7 +1,8 @@
 # Servianchallenge-infracode
 
 ## Deployment Instructions
-Markup : 1. Pre-Requirements.
+
+         1. Pre-Requirements.
               1.Azure Subscription
               2.GitHub Account
               3.Local Terraform Installation
@@ -10,7 +11,7 @@ Markup : 1. Pre-Requirements.
          2. Fork and clone the following git repositories.
               1. git@github.com:ssnyders89/Servianchallenge-infracode.git
               2. git@github.com:ssnyders89/TechChallengeApp.git
-         2. Manually Deploy Azure Shared Resources using Terraform, Required files found in git@github.com:ssnyders89/Servianchallenge-infracode.git
+         3. Manually Deploy Azure Shared Resources using Terraform, Required files found in git@github.com:ssnyders89/Servianchallenge-infracode.git
               1. This will deploy an azure shared resource group.
               2. Container Registry for us to store our docker Image that contains the app.
               3. A Storage Account and Storage Container to store our Backend Terraform State file.
