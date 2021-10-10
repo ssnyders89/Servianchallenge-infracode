@@ -72,5 +72,6 @@ FQDN: servian-challenge01.australiaeast.azurecontainer.io:3000
 - Think of an end to end automated pipeline to run (docker builds image, Auto modify Image name before deploying Azure container Instance)
 - Better backend state store
 - Secure app - Certificate HTTPS
+- Use different branches in Github to add features and test before merging to Main
 
 
