@@ -1,14 +1,15 @@
 # Servianchallenge-infracode
 
+## Pre requisites
+    1.Azure Subscription
+    2.GitHub Account
+    3.Local Terraform Installation
+    4.Local Git Installation
+    5. Azure DevOps Project
+
 ## Deployment Instructions
 
-         1. Pre-Requirements.
-              1.Azure Subscription
-              2.GitHub Account
-              3.Local Terraform Installation
-              4.Local Git Installation
-
-         2. Fork and clone the following git repositories.
+         1. Fork and clone the following git repositories.
               1. git@github.com:ssnyders89/Servianchallenge-infracode.git
               2. git@github.com:ssnyders89/TechChallengeApp.git
          3. Manually Deploy Azure Shared Resources using Terraform, Required files found in git@github.com:ssnyders89/Servianchallenge-infracode.git
