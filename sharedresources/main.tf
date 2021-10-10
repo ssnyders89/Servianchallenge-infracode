@@ -14,7 +14,7 @@ provider "azurerm" {
   features {}
 }
 
-
+# Shared resource Group.
 resource "azurerm_resource_group" "this" {
   name     = format("rg-%s-shared", var.environment)
   location = var.location
@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "this" {
   }
 }
 
-
+# Shared Container Registry
 resource "azurerm_container_registry" "acr" {
   name                = "acrsharedtest"
   resource_group_name = azurerm_resource_group.this.name
@@ -37,6 +37,7 @@ resource "azurerm_container_registry" "acr" {
   }
 }
 
+# Shared Storage account and Container.
 resource "azurerm_storage_account" "tfstate" {
   name                     = "storagetfstatetest"
   resource_group_name      = azurerm_resource_group.this.name

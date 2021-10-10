@@ -32,7 +32,7 @@ resource "azurerm_resource_group" "this" {
   }
 }
 
-
+# Azure container group which holds Application container instance.
 resource "azurerm_container_group" "challenge01" {
   name                = "techchallenge01"
   location            = azurerm_resource_group.this.location
@@ -64,6 +64,7 @@ resource "azurerm_container_group" "challenge01" {
 }
 
 
+# Azure Key Vault to hold application secrets.
 resource "azurerm_key_vault" "challenge" {
   name                        = "challenge-pwd01"
   location                    = azurerm_resource_group.this.location
@@ -94,6 +95,7 @@ resource "azurerm_key_vault" "challenge" {
 
 }
 
+#Azure keyvault secret for postgress.
   resource "azurerm_key_vault_secret" "challenge1" {
   name         = "postgressqlsecret"
   value        = random_string.postgressqlsecret.result
@@ -104,6 +106,7 @@ resource "azurerm_key_vault" "challenge" {
   }
 }
 
+#Azure keyvault secret for container registry.
   resource "azurerm_key_vault_secret" "acrsecret" {
   name         = "acrsecret"
   value        = data.azurerm_container_registry.acrsecret.admin_password
@@ -119,6 +122,7 @@ resource "random_string" "postgressqlsecret" {
   override_special = "/@£$"
 }
 
+#azure postgressql server.
 resource "azurerm_postgresql_server" "challenge" {
   name                = "postgresql-challenge-01"
   location            = azurerm_resource_group.this.location
@@ -139,7 +143,7 @@ resource "azurerm_postgresql_server" "challenge" {
     environment = var.environment
   }
 }
-
+#postgres database.
 resource "azurerm_postgresql_database" "challenge" {
   name                = "challengedb"
   resource_group_name = azurerm_resource_group.this.name
