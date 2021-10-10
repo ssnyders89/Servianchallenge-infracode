@@ -48,7 +48,7 @@ resource "azurerm_container_group" "challenge01" {
   }
   container {
     name   = "challenge01"
-    image  = "acrsharedtest.azurecr.io/techchallengeapp12:14"
+    image  = "acrsharedtest.azurecr.io/techchallengeapp12:latest"
     cpu    = "1.0"
     memory = "1.5"
 
