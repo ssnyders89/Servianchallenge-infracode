@@ -1,0 +1,7 @@
+*.tfstate
+*.tfstate.*
+**/.terraform/*
+*.exe
+*.terraform
+*.terraformrc
+*terraform.rc
