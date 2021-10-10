@@ -1,6 +1,6 @@
-<mxfile modified="2021-10-10T02:45:42.908Z" host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="9EG1ZVv70F4S-iRPbMrj" version="15.5.0" type="github">
+<mxfile modified="2021-10-10T02:55:57.559Z" host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="JPl9DbaOqsHckrHQuNu-" version="15.5.0" type="github">
   <diagram id="WI9T0HZ2pTsCkuznbFz-" name="Page-1">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2591" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,10 +17,10 @@
           <mxGeometry x="470" y="180" width="230" height="430" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-1" value="Application Resource Group" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Resource_Groups.svg;" parent="1" vertex="1">
-          <mxGeometry x="553.13" y="190" width="63.75" height="60" as="geometry" />
+          <mxGeometry x="490" y="150" width="31.88" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-2" value="Shared Resource Group" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Resource_Groups.svg;" parent="1" vertex="1">
-          <mxGeometry x="160" y="190" width="63.75" height="60" as="geometry" />
+          <mxGeometry x="113.4" y="150" width="31.88" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="qWfF6AdVSUQbr0Eaaa2f-3" target="qWfF6AdVSUQbr0Eaaa2f-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -29,7 +29,7 @@
           <mxGeometry x="561.5" y="392.75" width="46" height="60" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-4" value="Azure Subscription" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Key.svg;" parent="1" vertex="1">
-          <mxGeometry x="80" y="49.35" width="50" height="80.65" as="geometry" />
+          <mxGeometry x="40" width="19" height="30.65" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-5" value="Azure Key Vault" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/security/Key_Vaults.svg;" parent="1" vertex="1">
           <mxGeometry x="561.5" y="511" width="50" height="50" as="geometry" />
@@ -50,7 +50,7 @@
           <mxGeometry x="553.13" y="280.5" width="64" height="69" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-20" value="Azure Devops" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/devops/Azure_DevOps.svg;fillColor=none;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="940" y="540" width="64" height="64" as="geometry" />
+          <mxGeometry x="990" y="590" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-32" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.009;entryY=0.405;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="qWfF6AdVSUQbr0Eaaa2f-24" target="qWfF6AdVSUQbr0Eaaa2f-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
