@@ -1,4 +1,4 @@
-<mxfile modified="2021-10-10T02:55:57.559Z" host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="JPl9DbaOqsHckrHQuNu-" version="15.5.0" type="github">
+<mxfile modified="2021-10-10T02:57:37.799Z" host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="uPPWE1-amtcq8N66P16R" version="15.5.0" type="github">
   <diagram id="WI9T0HZ2pTsCkuznbFz-" name="Page-1">
     <mxGraphModel dx="2591" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -97,6 +97,9 @@
         </mxCell>
         <mxCell id="qWfF6AdVSUQbr0Eaaa2f-29" value="Containers" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts.svg;fillColor=none;gradientColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="203.75" y="510" width="65" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="8SKRGCehgDxrl_HsiKqx-1" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.github;fillColor=none;gradientColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="920" y="593" width="40" height="36" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
