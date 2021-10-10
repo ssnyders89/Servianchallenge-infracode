@@ -9,8 +9,12 @@ This code deploys the Servian challenge application Azure container Instance usi
 - Local Git Installation
 - Azure DevOps Project
 
+## Access current running app
+FQDN: servian-challenge01.australiaeast.azurecontainer.io:3000
+
 ## Architecture Diagram
 ![Azure architecture](architecturalDiagram.png)
+
 ## Deployment Instructions
 
 ### 1. Fork and clone the following git repositories.
@@ -67,5 +71,6 @@ This code deploys the Servian challenge application Azure container Instance usi
 - Think of Autoscale- currently not available with Azure container instance (could use AKS)
 - Think of an end to end automated pipeline to run (docker builds image, Auto modify Image name before deploying Azure container Instance)
 - Better backend state store
+- Secure app - Certificate HTTPS
 
 
