@@ -10,7 +10,7 @@ This code deploys the Servian challenge application Azure container Instance usi
 - Azure DevOps Project
 
 ## Architecture Diagram
-! [Azure architecture](https://github.com/ssnyders89/Servianchallenge-infracode/blob/main/architecturalDiagram.png)
+![Azure architecture](architecturalDiagram.png)
 ## Deployment Instructions
 
 ### 1. Fork and clone the following git repositories.
